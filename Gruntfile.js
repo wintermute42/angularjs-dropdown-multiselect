@@ -88,29 +88,13 @@ module.exports = function(grunt) {
 					dest:   'js-dropdown-multiselect.min.js'
 				}
 			},
-			less: {
-				development: {
-					options: {
-					},
-					files: {
-						"main.css": "_base.less",
-						"js-dropdown-multiselect.css": "_js-dropdown-multiselect.less"
-					}
-				}
-			},
-			cssmin: {
-				dev: {
-					src: ['js-dropdown-multiselect.css'],
-					dest: 'js-dropdown-multiselect.min.css'
-				}
-			}/*,
 			karma: {
 				unit: {
 					configFile: publicPathRelativeRoot+'config/karma.conf.js',
 					singleRun: true,
 					browsers: ['PhantomJS']
 				}
-			}*/
+			}
 		});
 		
 		
@@ -120,7 +104,7 @@ module.exports = function(grunt) {
 		*/
 		// Default task(s).
 		// grunt.registerTask('default', ['jshint:beforeconcat', 'less:development', 'concat:devJs', 'concat:devCss']);
-		grunt.registerTask('default', ['jshint:beforeconcatQ', 'less:development', 'cssmin', 'uglify:build']);
+		grunt.registerTask('default', ['jshint:beforeconcatQ', 'uglify:build']);
 	
 	}
 	init({});		//initialize here for defaults (init may be called again later within a task)
